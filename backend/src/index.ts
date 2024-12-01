@@ -71,7 +71,7 @@ app.post('/api/v1/signup', async (c) => {
   });
   // @ts-ignore
   const token = await sign({ id: user.id }, c.env.JWT.SECRET);
-
+console.log('hot')
   return c.json({
     jwt: token,
   });
