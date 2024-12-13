@@ -5,6 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
+<<<<<<< HEAD
   provider        = "prisma-client-js"
   engineType      = "library" // or "binary"
   previewFeatures = ["driverAdapters"]
@@ -36,4 +37,28 @@ model Blog {
   parentId  Int?    @map("parent_id")
   parent    Blog?   @relation("ParentChild", fields: [parentId], references: [id])
   children  Blog[]  @relation("ParentChild")
+=======
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid())
+  email String @unique
+  name String?
+  password String
+  posts Post[]
+}
+
+model Post {
+  id String @id @default(uuid())
+  title String
+  content String?
+  author User @relation(fields: [authorId],references: [id])
+  authorId String
+>>>>>>> fe464b8e384512e678d91164141a6b4e5d1e4254
 }

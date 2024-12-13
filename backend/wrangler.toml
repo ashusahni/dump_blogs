@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name = "your-project-name"
 main = "src/index.ts"
 compatibility_date = "2024-01-01"
@@ -27,3 +28,12 @@ JWT_SECRET = "your-secret-key"
 # [observability]
 # enabled = true
 # head_sampling_rate = 1
+=======
+name = "backend"
+main = "src/index.ts"
+compatibility_date = "2024-11-28"
+
+ compatibility_flags = [ "nodejs_compat" ]
+
+ [vars]
+>>>>>>> fe464b8e384512e678d91164141a6b4e5d1e4254
